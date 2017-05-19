@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,70 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xu7-ey-A4b">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <color key="backgroundColor" red="0.67126493912786001" green="0.99861490726470947" blue="0.16693891095992358" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="hG7-WG-Xad"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="siC-cp-T6v">
+                                <rect key="frame" x="0.0" y="65" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Xci-bn-40T"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="GNE-92-jSq">
+                                <rect key="frame" x="0.0" y="109" width="375" height="558"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Q8w-Q3-gqf">
+                                <rect key="frame" x="20" y="129" width="335" height="518"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bzI-K7-OIO">
+                                    <size key="itemSize" width="99" height="99"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uYe-q8-aCe">
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q8w-Q3-gqf" firstAttribute="top" secondItem="siC-cp-T6v" secondAttribute="bottom" constant="20" id="0rc-F8-917"/>
+                            <constraint firstItem="siC-cp-T6v" firstAttribute="top" secondItem="xu7-ey-A4b" secondAttribute="bottom" id="7IL-PH-wEL"/>
+                            <constraint firstAttribute="trailing" secondItem="siC-cp-T6v" secondAttribute="trailing" id="H0Z-J4-pLs"/>
+                            <constraint firstItem="siC-cp-T6v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KHt-nk-mfA"/>
+                            <constraint firstItem="xu7-ey-A4b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Pe6-Pu-PJy"/>
+                            <constraint firstItem="xu7-ey-A4b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Tq3-cn-g7o"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GNE-92-jSq" secondAttribute="bottom" id="VSY-fp-G0B"/>
+                            <constraint firstAttribute="trailing" secondItem="Q8w-Q3-gqf" secondAttribute="trailing" constant="20" id="X0V-wf-F62"/>
+                            <constraint firstItem="GNE-92-jSq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="clx-l5-3Ww"/>
+                            <constraint firstItem="GNE-92-jSq" firstAttribute="top" secondItem="siC-cp-T6v" secondAttribute="bottom" id="h14-qT-7HX"/>
+                            <constraint firstItem="Q8w-Q3-gqf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="hwV-5p-DSX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Q8w-Q3-gqf" secondAttribute="bottom" constant="20" id="kLS-q5-LIk"/>
+                            <constraint firstAttribute="trailing" secondItem="xu7-ey-A4b" secondAttribute="trailing" id="rMs-0d-RT2"/>
+                            <constraint firstAttribute="trailing" secondItem="GNE-92-jSq" secondAttribute="trailing" id="xS7-rb-ULU"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1200" height="715"/>
+    </resources>
 </document>
