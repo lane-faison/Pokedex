@@ -23,12 +23,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xu7-ey-A4b">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
-                                <color key="backgroundColor" red="0.67126493912786001" green="0.99861490726470947" blue="0.16693891095992358" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.62762658092668733" green="0.93369580827993792" blue="0.15608635547915059" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="hG7-WG-Xad"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="siC-cp-T6v">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="siC-cp-T6v">
                                 <rect key="frame" x="0.0" y="65" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Xci-bn-40T"/>
@@ -40,7 +40,7 @@
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Q8w-Q3-gqf">
                                 <rect key="frame" x="20" y="129" width="335" height="518"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bzI-K7-OIO">
                                     <size key="itemSize" width="99" height="99"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -48,13 +48,42 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uYe-q8-aCe">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="uYe-q8-aCe" customClass="PokeCell" customModule="Pokedex" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="136" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-Ex-kwy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="99" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="75" id="3se-IB-gqW"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charmander" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3D-wH-feP">
+                                                    <rect key="frame" x="0.0" y="75" width="99" height="24"/>
+                                                    <color key="backgroundColor" red="0.62762658092668733" green="0.93369580827993792" blue="0.15608635547915059" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="M4s-Ex-kwy" secondAttribute="trailing" id="CLP-z9-0es"/>
+                                            <constraint firstAttribute="bottom" secondItem="G3D-wH-feP" secondAttribute="bottom" id="Otn-hP-efi"/>
+                                            <constraint firstAttribute="trailing" secondItem="G3D-wH-feP" secondAttribute="trailing" id="YMj-nd-Le0"/>
+                                            <constraint firstItem="G3D-wH-feP" firstAttribute="leading" secondItem="uYe-q8-aCe" secondAttribute="leading" id="cHD-dd-JeE"/>
+                                            <constraint firstItem="M4s-Ex-kwy" firstAttribute="leading" secondItem="uYe-q8-aCe" secondAttribute="leading" id="dsK-Gd-0MX"/>
+                                            <constraint firstItem="G3D-wH-feP" firstAttribute="top" secondItem="M4s-Ex-kwy" secondAttribute="bottom" id="hwP-ZE-qOR"/>
+                                            <constraint firstItem="M4s-Ex-kwy" firstAttribute="top" secondItem="uYe-q8-aCe" secondAttribute="top" id="jRI-VI-acU"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="nameLbl" destination="G3D-wH-feP" id="i6W-Rr-Q4y"/>
+                                            <outlet property="thumbImg" destination="M4s-Ex-kwy" id="RmT-q5-hrC"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -77,6 +106,9 @@
                             <constraint firstAttribute="trailing" secondItem="GNE-92-jSq" secondAttribute="trailing" id="xS7-rb-ULU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collection" destination="Q8w-Q3-gqf" id="IJ5-W3-KVC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,6 +116,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="136" width="120" height="120"/>
         <image name="background" width="1200" height="715"/>
     </resources>
 </document>
