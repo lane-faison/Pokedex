@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation // for the music
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collection: UICollectionView!
     
     var pokemon = [Pokemon]()
+    var musicPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collection.delegate = self
         
         parsePokemonCSV()
+        initAudio()
+    }
+    
+    func initAudio() {
+        let path = Bundle.main.path(forResource: "Rise", ofType: "m4a")!
+        do {
+            musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
+            musicPlayer.prepareToPlay()
+            musicPlayer.numberOfLoops = -1 // makes it loop continuously
+            musicPlayer.play()
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
     }
     
     func parsePokemonCSV() {
@@ -68,5 +83,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 99, height: 99)
     }
+    
+    @IBAction func musicBtnPressed(_ sender: UIButton) {
+        if musicPlayer.isPlaying {
+            musicPlayer.pause()
+            sender.alpha = 0.2 // Changes opacity of the music button
+        } else {
+            musicPlayer.play()
+            sender.alpha = 1.0
+        }
+    }
+    
 }
 
