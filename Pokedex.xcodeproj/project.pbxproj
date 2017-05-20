@@ -15,6 +15,7 @@
 		F600D12C1ECEBB870086F44B /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = F600D12B1ECEBB870086F44B /* pokemon.csv */; };
 		F600D1311ECEBC9C0086F44B /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600D1301ECEBC9C0086F44B /* Pokemon.swift */; };
 		F600D1351ECF3FA00086F44B /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600D1341ECF3FA00086F44B /* PokeCell.swift */; };
+		F6A2D2BE1ECFAC5900B899E5 /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2D2BD1ECFAC5900B899E5 /* csv.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F600D12B1ECEBB870086F44B /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
 		F600D1301ECEBC9C0086F44B /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		F600D1341ECF3FA00086F44B /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
+		F6A2D2BD1ECFAC5900B899E5 /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				F600D1221ECEB6ED0086F44B /* LaunchScreen.storyboard */,
 				F600D1201ECEB6ED0086F44B /* Assets.xcassets */,
 				F600D12B1ECEBB870086F44B /* pokemon.csv */,
+				F6A2D2BD1ECFAC5900B899E5 /* csv.swift */,
 				F600D1251ECEB6ED0086F44B /* Info.plist */,
 			);
 			path = Pokedex;
@@ -130,6 +133,7 @@
 					F600D1151ECEB6ED0086F44B = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 34KC4VR7Y2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -175,6 +179,7 @@
 				F600D11C1ECEB6ED0086F44B /* ViewController.swift in Sources */,
 				F600D11A1ECEB6ED0086F44B /* AppDelegate.swift in Sources */,
 				F600D1311ECEBC9C0086F44B /* Pokemon.swift in Sources */,
+				F6A2D2BE1ECFAC5900B899E5 /* csv.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +343,7 @@
 				F600D12A1ECEB6ED0086F44B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
