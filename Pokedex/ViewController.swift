@@ -82,6 +82,21 @@ class ViewController: UIViewController, UISearchBarDelegate,UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var poke: Pokemon!
+        
+        if inSearchMode {
+            poke = filteredPokemon[indexPath.row]
+        } else {
+            poke = pokemon[indexPath.row]
+        }
+        
+        performSegue(withIdentifier: "PokemonDetailVC", sender: poke)
+        
+        
+        
+        
+        
+        
         
     }
     
@@ -130,6 +145,21 @@ class ViewController: UIViewController, UISearchBarDelegate,UICollectionViewDele
             // if it is, it goes into the filteredPokemon array.
             filteredPokemon = pokemon.filter({$0.name.range(of: lower) != nil})
             collection.reloadData()
+        }
+    }
+    // This function sets up the data to be passed between view controllers
+    // 1st line: Prepare for a segue and send Any object.
+    // 2nd line: Checking if segue identifier is PokemonDetailVC
+    // 3rd line: Create a variable for detailsVC and destination VC is PokemonDetailVC
+    // 4th line: poke is the sender and it is of the class Pokemon
+    // 5th line: the destination VC that contains pokemon, the variable created in PokemonDetailVC.swift file. pokemon is being set to this VC's variable poke
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PokemonDetailVC" {
+            if let detailsVC = segue.destination as? PokemonDetailVC {
+                if let poke = sender as? Pokemon {
+                    detailsVC.pokemon = poke
+                }
+            }
         }
     }
 }
