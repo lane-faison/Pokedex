@@ -89,15 +89,7 @@ class ViewController: UIViewController, UISearchBarDelegate,UICollectionViewDele
         } else {
             poke = pokemon[indexPath.row]
         }
-        
         performSegue(withIdentifier: "PokemonDetailVC", sender: poke)
-        
-        
-        
-        
-        
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

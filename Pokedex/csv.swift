@@ -60,7 +60,6 @@ open class CSV {
             }
             rows.append(row)
         }
-        
         return rows
     }
     
@@ -71,7 +70,6 @@ open class CSV {
             let column = self.rows.map { row in row[header] != nil ? row[header]! : "" }
             columns[header] = column
         }
-        
         return columns
     }
 }
